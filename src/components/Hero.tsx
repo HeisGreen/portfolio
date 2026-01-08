@@ -71,7 +71,7 @@ export default function Hero() {
               View My Work
             </a>
             <a
-              href="/resume.pdf"
+              href="/Chidozie_Hamilton_Green_Resume.pdf"
               target="_blank"
               className="px-8 py-3.5 border border-[var(--color-border)] hover:border-[var(--color-accent)] text-[var(--color-text-primary)] rounded-xl font-medium transition-colors flex items-center gap-2"
             >
@@ -121,7 +121,7 @@ export default function Hero() {
             {/* Main image container */}
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-[var(--color-bg-tertiary)] animate-pulse-glow">
               <img
-                src="/profile.jpg"
+                src="/chido.jpg"
                 alt="Chidozie Hamilton Green"
                 className="w-full h-full object-cover object-top"
               />
