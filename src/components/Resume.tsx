@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Download, FileText, Briefcase, GraduationCap, Award } from 'lucide-react';
+import { Download, Briefcase, GraduationCap, Award } from 'lucide-react';
 
 export default function Resume() {
   const [ref, inView] = useInView({
@@ -10,17 +10,11 @@ export default function Resume() {
 
   const experiences = [
     {
-      title: 'Backend Engineer',
-      company: 'Your Company',
-      period: '2023 - Present',
-      description: 'Building scalable backend systems and APIs using Java and Spring Boot.',
-      icon: Briefcase,
-    },
-    {
-      title: 'Software Developer',
-      company: 'Previous Company',
-      period: '2022 - 2023',
-      description: 'Developed and maintained web applications using modern technologies.',
+      title: 'Full-Stack Engineer',
+      company: 'NaviaRide',
+      period: 'January 2026 – Present',
+      description:
+        'NaviaRide is a route-based peer-to-peer carpooling platform for Nigeria, connecting drivers and commuters on fixed daily routes. Built the mobile app, backend API, and admin web platform end-to-end — including real-time trip tracking, Paystack payments, KYC verification, in-app voice calling, and safety features.',
       icon: Briefcase,
     },
   ];
@@ -178,19 +172,6 @@ export default function Resume() {
           </motion.div>
         )}
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-12 p-6 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-emerald)]/10 border border-[var(--color-accent)]/20 text-center"
-        >
-          <FileText className="mx-auto mb-3 text-[var(--color-accent)]" size={32} />
-          <p className="text-[var(--color-text-secondary)]">
-            This is a placeholder resume section. You can update it with your actual experience, education, and certifications.
-            <br />
-            Don't forget to add your resume PDF file to the <code className="px-2 py-1 rounded bg-[var(--color-bg-tertiary)] text-sm">public</code> folder!
-          </p>
-        </motion.div>
       </div>
     </section>
   );

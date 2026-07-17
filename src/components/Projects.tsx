@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, ExternalLink, Code2 } from 'lucide-react';
+import { Github, ExternalLink, Code2, Download } from 'lucide-react';
 
 export default function Projects() {
   const [ref, inView] = useInView({
@@ -10,20 +10,47 @@ export default function Projects() {
 
   const projects = [
     {
+      title: 'NaviaRide',
+      description:
+        'Route-based peer-to-peer carpooling for Nigeria. Designed and shipped the full product stack — React Native mobile app (iOS/Android), Spring Boot API, and Next.js admin/marketing site — covering bookings, live GPS tracking, driver KYC, wallet & payouts, VoIP calls, and emergency trip sharing.',
+      tech: [
+        'React Native',
+        'Expo',
+        'TypeScript',
+        'Spring Boot',
+        'Java',
+        'Next.js',
+        'PostgreSQL',
+        'Redis',
+        'WebSockets',
+        'Docker',
+        'Paystack',
+        'Google Maps',
+        'Agora',
+        'Firebase',
+      ],
+      github: '#',
+      demo: 'https://www.naviaride.space',
+      apk: 'https://drive.google.com/file/d/1WR-IPogsRU31gJuNvmbdkdUDBHaUUbFe/view?usp=drivesdk',
+      image: '/naviaride-landing.png',
+    },
+    {
       title: 'HealthTrack',
-      description: 'A health and fitness application that helps users track workouts, manage exercise routines, and monitor progress over time. Built with a focus on clean backend architecture and scalable REST API design.',
-      tech: ['Java', 'Spring Boot', 'Spring Security', 'React', 'TypeScript', 'MySQL', 'JWT', 'REST API'],
+      description:
+        'A health and fitness application that helps users track workouts, manage exercise routines, and monitor progress over time. Built with a focus on clean backend architecture and scalable REST API design.',
+      tech: [
+        'Java',
+        'Spring Boot',
+        'Spring Security',
+        'React',
+        'TypeScript',
+        'MySQL',
+        'JWT',
+        'REST API',
+      ],
       github: 'https://github.com/HeisGreen/health-app.git',
       demo: 'http://health-app-ivory-one.vercel.app/',
       image: '/healthlandingpage.png',
-    },
-    {
-      title: 'More Projects Coming Soon',
-      description: 'I\'m constantly working on new projects. Check back soon to see more of my work!',
-      tech: ['Various'],
-      github: '#',
-      demo: '#',
-      image: null,
     },
   ];
 
@@ -94,7 +121,7 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                   {project.github !== '#' && (
                     <a
                       href={project.github}
@@ -115,6 +142,17 @@ export default function Projects() {
                     >
                       <ExternalLink size={18} />
                       <span>Live Demo</span>
+                    </a>
+                  )}
+                  {'apk' in project && project.apk && (
+                    <a
+                      href={project.apk}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors text-sm font-medium"
+                    >
+                      <Download size={18} />
+                      <span>Download APK</span>
                     </a>
                   )}
                 </div>
