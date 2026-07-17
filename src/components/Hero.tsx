@@ -55,7 +55,7 @@ export default function Hero() {
             className="text-lg text-[var(--color-text-secondary)] mb-8 max-w-xl mx-auto lg:mx-0"
           >
             Full-stack engineer building mobile apps, backend APIs, and web platforms.
-            From NaviaRide to production Next.js sites — React Native, Spring Boot, and real products people use.
+            From NaviaRide to production Next.js sites, React Native, Spring Boot, and real products people use.
           </motion.p>
 
           <motion.div

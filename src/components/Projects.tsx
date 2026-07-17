@@ -12,7 +12,7 @@ export default function Projects() {
     {
       title: 'NaviaRide',
       description:
-        'Route-based peer-to-peer carpooling for Nigeria. Designed and shipped the full product stack — React Native mobile app (iOS/Android), Spring Boot API, and Next.js admin/marketing site — covering bookings, live GPS tracking, driver KYC, wallet & payouts, VoIP calls, and emergency trip sharing.',
+        'Route-based peer-to-peer carpooling for Nigeria. Designed and shipped the full product stack, React Native mobile app (iOS/Android), Spring Boot API, and Next.js admin/marketing site — covering bookings, live GPS tracking, driver KYC, wallet & payouts, VoIP calls, and emergency trip sharing.',
       tech: [
         'React Native',
         'Expo',
@@ -30,7 +30,7 @@ export default function Projects() {
         'Firebase',
       ],
       github: '#',
-      demo: 'https://www.naviaride.space',
+      demo: 'https://naviaride.space',
       apk: 'https://drive.google.com/file/d/1WR-IPogsRU31gJuNvmbdkdUDBHaUUbFe/view?usp=drivesdk',
       image: '/naviaride-landing.png',
     },
