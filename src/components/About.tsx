@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code, Database, Zap, Brain } from 'lucide-react';
+import { Smartphone, Server, Globe, Plug } from 'lucide-react';
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -10,24 +10,24 @@ export default function About() {
 
   const features = [
     {
-      icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable and scalable backend solutions',
+      icon: Smartphone,
+      title: 'Mobile Apps',
+      description: 'React Native and Expo apps for iOS and Android with real-time features',
     },
     {
-      icon: Database,
-      title: 'Database Design',
-      description: 'Structuring efficient and optimized database schemas',
+      icon: Server,
+      title: 'Backend Systems',
+      description: 'Spring Boot and Node.js APIs, databases, and scalable architecture',
     },
     {
-      icon: Zap,
-      title: 'Performance',
-      description: 'Building high-performance APIs and systems',
+      icon: Globe,
+      title: 'Web Platforms',
+      description: 'Next.js and TypeScript sites deployed to production with CI/CD',
     },
     {
-      icon: Brain,
-      title: 'AI Integration',
-      description: 'Leveraging AI to automate workflows and solve problems',
+      icon: Plug,
+      title: 'Integrations',
+      description: 'Paystack, Google Maps, VoIP, KYC, and real-time WebSocket services',
     },
   ];
 
@@ -57,23 +57,23 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-6 text-[var(--color-text-primary)]">
-              Backend Engineer & Problem Solver
+              Full-Stack Engineer & Product Builder
             </h3>
             <div className="space-y-4 text-[var(--color-text-secondary)] leading-relaxed">
               <p>
-                I'm a backend-focused software developer with a strong interest in building scalable systems and real products that people actually use. I started out exploring tech alongside a science background, and over time I leaned fully into software development.
+                I'm a full-stack software engineer with a Biochemistry background from Caleb University. I started in tech through the Google Developer Student Club and have since built production systems across mobile, backend, and web.
               </p>
               <p>
-                I enjoy working with Java and Spring Boot, designing APIs, structuring databases, and thinking through system design. Lately, I've been exploring how AI can be used to automate workflows and improve everyday products.
+                I work end-to-end — React Native and Expo for mobile, Spring Boot and Node.js for APIs, and Next.js for web platforms. Recent work includes NaviaRide, a route-based carpooling app for Nigeria, and production sites for Oakalley Group.
               </p>
               <p>
-                I'm constantly learning, building side projects, and connecting with people who are also creating and experimenting.
+                I'm constantly shipping, learning, and connecting with people building real products.
               </p>
             </div>
             <div className="mt-8 flex items-center gap-4">
               <div className="px-4 py-2 rounded-lg bg-[var(--color-bg-tertiary)] border border-[var(--color-border)]">
                 <span className="text-sm text-[var(--color-text-secondary)]">📍</span>
-                <span className="ml-2 text-[var(--color-text-primary)] font-medium">Nigeria</span>
+                <span className="ml-2 text-[var(--color-text-primary)] font-medium">Lagos, Nigeria</span>
               </div>
               <div className="px-4 py-2 rounded-lg bg-[var(--color-bg-tertiary)] border border-[var(--color-border)]">
                 <span className="text-sm text-[var(--color-text-secondary)]">💼</span>

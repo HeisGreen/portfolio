@@ -39,8 +39,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:chidogreen2003@gmail.com',
-      text: 'chidogreen2003@gmail.com',
+      href: 'mailto:greenchidozie@gmail.com',
+      text: 'greenchidozie@gmail.com',
     },
     {
       icon: Github,

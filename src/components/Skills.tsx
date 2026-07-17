@@ -9,23 +9,23 @@ export default function Skills() {
 
   const skillCategories = [
     {
-      category: 'Backend',
-      skills: ['Java', 'Spring Boot', 'Node.js', 'REST APIs', 'Backend Architecture'],
+      category: 'Languages',
+      skills: ['Java', 'JavaScript', 'TypeScript', 'Python', 'SQL', 'HTML', 'CSS'],
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      category: 'Frontend',
-      skills: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
+      category: 'Frameworks & Mobile',
+      skills: ['Spring Boot', 'React', 'React Native', 'Expo', 'Next.js', 'Node.js', 'Tailwind CSS'],
       color: 'from-purple-500 to-pink-500',
     },
     {
-      category: 'Database',
-      skills: ['MongoDB', 'MySQL', 'PostgreSQL'],
+      category: 'Databases & DevOps',
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Docker', 'Git', 'Render', 'Vercel', 'Railway', 'EAS'],
       color: 'from-green-500 to-emerald-500',
     },
     {
-      category: 'Tools & Others',
-      skills: ['Git & GitHub', 'System Design', 'AI-assisted development'],
+      category: 'APIs & Integrations',
+      skills: ['Google Maps', 'Paystack', 'Agora', 'QoreID', 'Firebase', 'WebSockets', 'Sentry'],
       color: 'from-orange-500 to-red-500',
     },
   ];
@@ -95,8 +95,8 @@ export default function Skills() {
             What I'm Learning & Exploring
           </h3>
           <p className="text-[var(--color-text-secondary)]">
-            I'm always expanding my skill set. Currently diving deeper into system design patterns, 
-            microservices architecture, and exploring new AI tools and frameworks to enhance development workflows.
+            Diving deeper into system design, mobile release pipelines with EAS and TestFlight,
+            and production deployment workflows across Vercel, Render, and Railway.
           </p>
         </motion.div>
       </div>

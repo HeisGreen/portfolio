@@ -44,7 +44,7 @@ export default function Hero() {
             <span className="gradient-text">Chidozie</span>
             <br />
             <span className="text-[var(--color-text-secondary)]">
-              Backend Engineer
+              Full-Stack Engineer
             </span>
           </motion.h1>
 
@@ -54,8 +54,8 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-lg text-[var(--color-text-secondary)] mb-8 max-w-xl mx-auto lg:mx-0"
           >
-            Backend engineer who loves building things. I focus on scalable APIs, 
-            clean architecture, and using AI to solve real-world problems.
+            Full-stack engineer building mobile apps, backend APIs, and web platforms.
+            From NaviaRide to production Next.js sites — React Native, Spring Boot, and real products people use.
           </motion.p>
 
           <motion.div
@@ -89,7 +89,7 @@ export default function Hero() {
               { icon: Github, href: 'https://github.com/HeisGreen', label: 'GitHub' },
               { icon: Linkedin, href: 'https://www.linkedin.com/in/chidozie-green-510220233', label: 'LinkedIn' },
               { icon: Twitter, href: 'https://x.com/heis_green', label: 'Twitter' },
-              { icon: Mail, href: 'mailto:chidogreen2003@gmail.com', label: 'Email' },
+              { icon: Mail, href: 'mailto:greenchidozie@gmail.com', label: 'Email' },
             ].map((social) => (
               <motion.a
                 key={social.label}
@@ -135,7 +135,7 @@ export default function Hero() {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              <span className="text-sm font-medium">Java & Spring Boot</span>
+              <span className="text-sm font-medium">React Native & Spring Boot</span>
             </motion.div>
             
             <motion.div
