@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Github, Linkedin, Twitter, Send, MapPin } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, Send, MapPin, Phone } from 'lucide-react';
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -13,19 +13,37 @@ export default function Contact() {
     name: '',
     email: '',
     message: '',
+    company: '',
   });
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    
-    setTimeout(() => {
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
       setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 3000);
-    }, 1000);
+      setFormData({ name: '', email: '', message: '', company: '' });
+      setTimeout(() => setStatus('idle'), 4000);
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,6 +59,12 @@ export default function Contact() {
       label: 'Email',
       href: 'mailto:greenchidozie@gmail.com',
       text: 'greenchidozie@gmail.com',
+    },
+    {
+      icon: Phone,
+      label: 'Phone',
+      href: 'tel:+2349043249861',
+      text: '+234 904 324 9861',
     },
     {
       icon: Github,
@@ -95,6 +119,19 @@ export default function Contact() {
               Send a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="absolute left-[-9999px]" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div>
                 <label
                   htmlFor="name"
@@ -170,6 +207,17 @@ export default function Contact() {
                   </>
                 )}
               </motion.button>
+
+              {status === 'error' && (
+                <p className="text-sm text-red-400" role="alert">
+                  {errorMessage}
+                </p>
+              )}
+              {status === 'success' && (
+                <p className="text-sm text-[var(--color-emerald-light)]" role="status">
+                  Thanks for reaching out — I'll get back to you soon.
+                </p>
+              )}
             </form>
           </motion.div>
 

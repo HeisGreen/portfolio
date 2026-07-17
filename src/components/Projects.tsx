@@ -2,13 +2,23 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink, Code2, Download } from 'lucide-react';
 
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  demo?: string;
+  apk?: string;
+  image: string | null;
+}
+
 export default function Projects() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: 'NaviaRide',
       description:
@@ -51,6 +61,38 @@ export default function Projects() {
       github: 'https://github.com/HeisGreen/health-app.git',
       demo: 'http://health-app-ivory-one.vercel.app/',
       image: '/healthlandingpage.png',
+    },
+    {
+      title: 'Uber Clone',
+      description:
+        'A full-stack ride-hailing app with a multi-screen interface, real-time location tracking, and ride matching. Integrated Google Maps and Places APIs, secure Paystack payments, and JWT authentication with a PostgreSQL backend.',
+      tech: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Google Maps', 'Paystack', 'JWT', 'PostgreSQL'],
+      github: 'https://github.com/HeisGreen',
+      image: null,
+    },
+    {
+      title: 'Bank Application (Backend)',
+      description:
+        'A scalable banking backend built with Java and Spring Boot for secure transactions. Features JWT-based authentication, role-based access control (RBAC), and persistent storage of accounts, balances, and transaction records, with CI/CD via GitHub Actions.',
+      tech: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'RBAC', 'Spring Data JPA', 'MySQL', 'GitHub Actions'],
+      github: 'https://github.com/HeisGreen',
+      image: null,
+    },
+    {
+      title: 'Online Examination System',
+      description:
+        'An online exam platform using Java and MySQL for backend data management with a JavaFX frontend. Designed a relational schema for exams, user profiles, and questions, using JDBC for secure connections and optimized queries for fast retrieval during exams.',
+      tech: ['Java', 'JavaFX', 'MySQL', 'JDBC'],
+      github: 'https://github.com/HeisGreen',
+      image: null,
+    },
+    {
+      title: 'Customer Management System',
+      description:
+        'A robust customer management backend built with Spring Boot and Spring Web. Uses Spring Data JPA for efficient data access against a PostgreSQL database running in Docker for a consistent environment, with continuous integration tests for smooth updates.',
+      tech: ['Spring Boot', 'Spring Web', 'Spring Data JPA', 'PostgreSQL', 'Docker'],
+      github: 'https://github.com/HeisGreen',
+      image: null,
     },
   ];
 
@@ -144,7 +186,7 @@ export default function Projects() {
                       <span>Live Demo</span>
                     </a>
                   )}
-                  {'apk' in project && project.apk && (
+                  {project.apk && (
                     <a
                       href={project.apk}
                       target="_blank"

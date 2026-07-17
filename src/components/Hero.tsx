@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Github, Linkedin, Twitter, ArrowDown, Mail } from 'lucide-react';
 
 export default function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section
       id="home"
@@ -116,7 +118,10 @@ export default function Hero() {
         >
           <div className="relative">
             {/* Decorative ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-dashed border-[var(--color-accent)] opacity-30 animate-spin" style={{ animationDuration: '20s' }} />
+            <div
+              className={`absolute inset-0 rounded-full border-2 border-dashed border-[var(--color-accent)] opacity-30 ${prefersReducedMotion ? '' : 'animate-spin'}`}
+              style={prefersReducedMotion ? undefined : { animationDuration: '20s' }}
+            />
             
             {/* Main image container */}
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-[var(--color-bg-tertiary)] animate-pulse-glow">
@@ -132,16 +137,16 @@ export default function Hero() {
             {/* Floating badges */}
             <motion.div
               className="absolute -right-4 top-1/4 px-4 py-2 rounded-lg glass"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
+              animate={prefersReducedMotion ? undefined : { y: [0, -10, 0] }}
+              transition={prefersReducedMotion ? undefined : { duration: 3, repeat: Infinity }}
             >
               <span className="text-sm font-medium">React Native & Spring Boot</span>
             </motion.div>
             
             <motion.div
               className="absolute -left-4 bottom-1/4 px-4 py-2 rounded-lg glass"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+              animate={prefersReducedMotion ? undefined : { y: [0, 10, 0] }}
+              transition={prefersReducedMotion ? undefined : { duration: 3, repeat: Infinity, delay: 1.5 }}
             >
               <span className="text-sm font-medium">🇳🇬 Nigeria</span>
             </motion.div>
