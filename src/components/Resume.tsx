@@ -56,7 +56,7 @@ export default function Resume() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-emerald)] mx-auto mb-6" />
           <motion.a
-            href="/Chidozie_Hamilton_Green_Resume.pdf"
+            href="/Chidozie-Green-CV.pdf"
             download
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}

@@ -219,13 +219,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
-            <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-emerald)]/10 border border-[var(--color-accent)]/20">
-              <p className="text-[var(--color-text-secondary)] text-sm">
-                <strong className="text-[var(--color-text-primary)]">Note:</strong> This contact form is a placeholder. 
-                For a production site, you'll want to integrate with a service like EmailJS, Formspree, or your own backend API.
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>

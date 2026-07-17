@@ -71,7 +71,7 @@ export default function Hero() {
               View My Work
             </a>
             <a
-              href="/Chidozie_Hamilton_Green_Resume.pdf"
+              href="/Chidozie-Green-CV.pdf"
               target="_blank"
               className="px-8 py-3.5 border border-[var(--color-border)] hover:border-[var(--color-accent)] text-[var(--color-text-primary)] rounded-xl font-medium transition-colors flex items-center gap-2"
             >
