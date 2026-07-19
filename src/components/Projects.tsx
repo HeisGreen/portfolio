@@ -63,6 +63,33 @@ export default function Projects() {
       image: '/healthlandingpage.png',
     },
     {
+      title: 'Oakalley Consulting',
+      description:
+        'Business development and management consulting marketing site for a Nigeria-based business group. Built with Next.js, TypeScript, and Tailwind CSS — covering service pages, BuildRun, solutions, and investment advisory with server-side contact handling.',
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+      github: '#',
+      demo: 'https://oakalley-consulting.vercel.app',
+      image: '/oakalley-consulting.png',
+    },
+    {
+      title: 'Oakalley Capital',
+      description:
+        'Financial brokerage platform with multi-step loan application flows (salary-backed and collateral), document uploads, and structured pages for investment advisory. Built in Next.js 16, React 19, TypeScript, and Tailwind CSS with API routes and transactional email.',
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel', 'Render'],
+      github: '#',
+      demo: 'https://oakalley.vercel.app',
+      image: '/oakalley-capital.png',
+    },
+    {
+      title: 'Oakalley Autos',
+      description:
+        'Global auto-import consultancy site for sourcing and importing vehicles from China, the US, UK, Germany, and Canada. Features service pages, import routes, and a contact workflow with server-side form handling and email delivery.',
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+      github: '#',
+      demo: 'https://oakalley-autos.vercel.app',
+      image: '/oakalley-autos.png',
+    },
+    {
       title: 'Uber Clone',
       description:
         'A full-stack ride-hailing app with a multi-screen interface, real-time location tracking, and ride matching. Integrated Google Maps and Places APIs, secure Paystack payments, and JWT authentication with a PostgreSQL backend.',
@@ -114,7 +141,7 @@ export default function Projects() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-emerald)] mx-auto mb-4" />
           <p className="text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-            A collection of projects I've built. More coming soon!
+            Production apps, client sites, and side projects
           </p>
         </motion.div>
 
