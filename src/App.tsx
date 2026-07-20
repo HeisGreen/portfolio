@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { Github, Linkedin, Twitter, Mail, ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,6 +11,8 @@ import Resume from './components/Resume';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import BlogPost from './components/BlogPost';
+import AuroraBackground from './components/AuroraBackground';
+import ScrollProgress from './components/ScrollProgress';
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -42,9 +45,58 @@ function Home() {
   );
 }
 
+const socials = [
+  { icon: Github, href: 'https://github.com/HeisGreen', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/chidozie-green-510220233', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/heis_green', label: 'Twitter' },
+  { icon: Mail, href: 'mailto:greenchidozie@gmail.com', label: 'Email' },
+];
+
+function Footer() {
+  return (
+    <footer className="relative mt-10 border-t border-[var(--color-border)] py-12 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <Link to="/#home" className="font-display text-2xl font-bold tracking-tight">
+          <span className="gradient-text">Chido</span>
+          <span className="text-[var(--color-emerald-light)]">.</span>
+        </Link>
+
+        <div className="flex items-center gap-3">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className="p-2.5 rounded-xl glass text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              <s.icon size={18} />
+            </a>
+          ))}
+        </div>
+
+        <a
+          href="#home"
+          className="inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+        >
+          Back to top <ArrowUp size={16} />
+        </a>
+      </div>
+      <div className="max-w-7xl mx-auto mt-8 text-center">
+        <p className="text-[var(--color-text-muted)] text-sm">
+          © {new Date().getFullYear()} Chidozie Green — designed &amp; built with React, TypeScript &amp; Tailwind CSS.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <AuroraBackground />
+      <ScrollProgress />
       <ScrollManager />
       <Navbar />
       <Routes>
@@ -52,15 +104,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)]">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[var(--color-text-secondary)] text-sm">
-            © {new Date().getFullYear()} Chidozie Green. Built with React, TypeScript, and Tailwind CSS.
-          </p>
-        </div>
-      </footer>
-
+      <Footer />
       <Analytics />
     </div>
   );
